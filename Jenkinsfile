@@ -4,7 +4,7 @@ pipeline {
     registryCredential = 'eemi-devops-hubdocker'
   }
   agent any
-  tools {nodejs "node" }
+  tools {nodejs "nodejs" }
   stages {
     stage('Cloning Git') {
       steps {
