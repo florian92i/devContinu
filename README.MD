@@ -1,46 +1,3 @@
-# Jenkins
-
-Run docker-compose up -d
-
-
-# Etape
-
-
-
-
-## etape 1:
-
-- docker exec -it jenkins/docker bash
-
-- cat /var/jenkins_home/secrets/initialAdminPassword
-
-- prendre le mot de passe affiche par cat 
-
-- cliquer sur installer les pluggins personnaliser et ajouter en plus node.js
-
-- crée son compte 
-
-- http://localhost:8080/configureTools/ --> aller sur nodejs --> ensuite cliquer sur installer nodesjs et appeler en name node
-
-- Ajouter les credentials pour git et dockerhub en global
-
-
-- Cliquer sur nouveau item
-
-- Select Pipeline script from SCM
-
-- Ajouter l'url d'un repo --> https://github.com/florian92i/devContinu --> avec les bon credential
-
-- Cliquer sur lancer un build 
-
-- Le build a la fin marche pas ça vient de votre projet 
-
-
-
-
-
-
-
 # Get started with Jenkins
 
 1. Run docker-compose up -d
@@ -64,10 +21,10 @@ Run docker-compose up -d
    - Go to the pipeline section at bottom and change the definition Pipeline script to Pipeline script from SCM
    - For the SCM, choose Git and set the Repository URL as follow: https://github.com/florian92i/devContinu
    - Script Path field must be Jenkinsfile
-   - add key pub on you server 
+   - add key pub on you server
    - change  environment variable on file Jenkins for dockerhub remplace ssh <nom_utilisateur>@<ipaddress> -p <num_port> in script
    - Then save the pipeline
-   - Click Build now, it will install dependance, run test, create a new image to Docker Hub, and deploy image on serveur, you can run project on server --> add 'sudo docker run nameOfImage'
+   - Click Build now, it will install dependance, run test, create a new image to Docker Hub, and deploy image on serveur, you can run image on server --> add 'sudo docker run nameOfImage' on script Jenkinsfile
 
 
 
