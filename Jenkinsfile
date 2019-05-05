@@ -37,7 +37,7 @@ pipeline {
         }
       }
     }
-    stage('ssh') {
+    stage('Deploy On serveur') {
            steps {
               sh "ssh -o 'StrictHostKeyChecking no' floriancompiegne@35.205.96.241 'docker pull 9123456789/integrationcontinu:projet'"
            }
