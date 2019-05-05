@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/Akasam/jenkins-demo1'
+        eemi-devops-github 'https://github.com/Akasam/jenkins-demo1'
         }
     }
     stage('Build') {

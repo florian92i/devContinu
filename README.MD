@@ -8,7 +8,7 @@
 
 4. Then create your admin user.
 
-5. Once the user created, add hub docker credential:
+5. Once the user created, add hub docker credential and git credential:
    - Click Credentials > System on the left
    - Under System, click the Global credentials (unrestricted) link to access this default domain. ([click here for quick access](http://localhost:8080/credentials/store/system/domain/_))
    - Click Add Credentials and set the Docker Hub username/password (for the ID, set eemi-devops-dockerhub)
