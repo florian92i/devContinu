@@ -1,0 +1,28 @@
+FROM jenkins/jenkins:lts
+
+USER root
+RUN apt-get update && \
+apt-get -y install apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg2 \
+    software-properties-common && \
+curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg > /tmp/dkey; apt-key add /tmp/dkey && \
+add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
+    $(lsb_release -cs) \
+    stable" && \
+apt-get update && \
+apt-get -y install docker-ce
+RUN apt-get install -y docker-ce
+RUN usermod -a -G docker jenkins
+
+
+RUN mkdir -p /root/.ssh
+ADD ./key root/.ssh/id_rsa
+ADD ./key.pub root/.ssh/id_rsa.pub
+ADD ./known_hosts root/.ssh/known_hosts
+RUN chmod 700 /root/.ssh/id_rsa
+RUN chmod 700 /root/.ssh/id_rsa.pub
+RUN chmod 700 /root/.ssh/known_hosts
+USER jenkins
