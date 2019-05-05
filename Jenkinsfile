@@ -1,8 +1,7 @@
 pipeline {
   environment {
     registry = "9123456789/integrationcontinu"
-    registryCredential = 'dockerhub'
-    dockerImage = ''
+    registryCredential = 'eemi-devops-hubdocker'
   }
   agent any
   tools {nodejs "node" }
