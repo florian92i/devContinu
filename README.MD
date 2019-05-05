@@ -21,10 +21,10 @@
    - Go to the pipeline section at bottom and change the definition Pipeline script to Pipeline script from SCM
    - For the SCM, choose Git and set the Repository URL as follow: https://github.com/florian92i/devContinu
    - Script Path field must be Jenkinsfile
-   - add key pub on you server
+   - add key pub (jenkins/key.pub) on you server 
    - change environment variable on file Jenkins for dockerhub and remplace ssh <nom_utilisateur>@<ipaddress> -p <num_port> in script by your server ip
    - Then save the pipeline
-   - Click Build now, it will install dependance, run test, create a new image to Docker Hub, and deploy image on serveur, you can run image on server --> add 'sudo docker run nameOfImage' on script Jenkinsfile
+   - Click Build now, it will install dependance, run test, create a new image to Docker Hub, and deploy image on serveur, you can run image on server --> add 'sudo docker run nameImage' on script Jenkinsfile
 
 
 
